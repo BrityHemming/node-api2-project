@@ -85,6 +85,8 @@ server.get('/flip', (req, res)=>{
 
 
 // define the port
-const port = 5002;
+const port = process.env.PORT || 5002; //telling application to read the port from the environment
+// heroku will add the port configuration variable to the environment -step 1
+// step 2 - go to package.json and give heroku a script of "start": "node index.js"
 //tell the server to listen for this port
 server.listen(port, ()=> console.log('server is running'));
